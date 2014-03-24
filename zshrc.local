@@ -1,0 +1,9 @@
+# Got a warning from 'brew doctor' about /usr/bin being before /usr/local/bin
+# so this export fixes that. Source: http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
