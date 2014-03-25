@@ -9,3 +9,14 @@ let g:airline_powerline_fonts = 1
 set t_Co=256
 let g:airline_theme = 'luna'
 
+" For syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+
+" For YouCompleteMe
+" These are the tweaks I apply to YCM's config, you don't need them but they
+" might help. YCM gives you popups and splits by default that some people might not
+" like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview

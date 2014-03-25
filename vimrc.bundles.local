@@ -1,2 +1,13 @@
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'rking/ag.vim'
+Bundle 'majutsushi/tagbar'
+
+" Javascript settings: http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'marijnh/tern_for_vim'
