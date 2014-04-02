@@ -23,3 +23,13 @@ set completeopt-=preview
 
 " For NerdTree
 let NERDTreeShowHidden=1
+
+" highlight current line"
+set cursorline
+
+" highlight matches when searched
+set hlsearch
+
+" TODO: Create shortcut to turn of highlight after vim is done searching
+" turn off search highlight
+" nnoremap <leader><space> :nohlsearch<CR>
