@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# TODO: This isn't working
+
+if [$# == 2]; then
+  echo "open dash://$1:$2"
+else
+  open dash://$1
+fi
+
