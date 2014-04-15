@@ -1,4 +1,4 @@
-thoughtbot dotfiles
+dotfiles
 ===================
 
 Requirements
