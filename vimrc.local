@@ -38,3 +38,22 @@ set hlsearch
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+" Key mappings for xmpfilter:
+" http://commandercoriander.net/blog/2012/10/10/evaluate-lines-of-ruby-in-vim/
+nmap <buffer> <F5> <Plug>(xmpfilter-run)
+xmap <buffer> <F5> <Plug>(xmpfilter-run)
+imap <buffer> <F5> <Plug>(xmpfilter-run)
+nmap <buffer> <F4> <Plug>(xmpfilter-mark)
+xmap <buffer> <F4> <Plug>(xmpfilter-mark)
+imap <buffer> <F4> <Plug>(xmpfilter-mark)
+
+" Navigate 2x faster when holding down Shift
+nmap <s-j> 2j
+nmap <s-k> 2k
+nmap <s-h> 2h
+nmap <s-l> 2l
+" Navigate 4x faster when holding down Ctrl
+nmap <c-j> 4j
+nmap <c-k> 4k
+nmap <c-h> 4h
+nmap <c-l> 4l

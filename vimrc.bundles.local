@@ -3,6 +3,8 @@ Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'rking/ag.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-rvm'
+Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 
 " Javascript settings: http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
