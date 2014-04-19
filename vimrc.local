@@ -33,3 +33,8 @@ set hlsearch
 " TODO: Create shortcut to turn of highlight after vim is done searching
 " turn off search highlight
 " nnoremap <leader><space> :nohlsearch<CR>
+
+" highlights the background in a subtle red for text that goes over the 80 column limit
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
