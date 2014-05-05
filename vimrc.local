@@ -35,8 +35,8 @@ set hlsearch
 " nnoremap <leader><space> :nohlsearch<CR>
 
 " highlights the background in a subtle red for text that goes over the 80 column limit
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
 
 " Key mappings for xmpfilter:
 " http://commandercoriander.net/blog/2012/10/10/evaluate-lines-of-ruby-in-vim/

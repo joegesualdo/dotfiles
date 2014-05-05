@@ -6,6 +6,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-rvm'
 Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
+Bundle 'mv/mv-vim-nginx'
 
 " Javascript settings: http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
 Bundle 'jelera/vim-javascript-syntax'
