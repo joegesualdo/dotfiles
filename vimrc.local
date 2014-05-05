@@ -48,12 +48,15 @@ xmap <buffer> <F4> <Plug>(xmpfilter-mark)
 imap <buffer> <F4> <Plug>(xmpfilter-mark)
 
 " Navigate 2x faster when holding down Shift
-nmap <s-j> 2j
-nmap <s-k> 2k
-nmap <s-h> 2h
-nmap <s-l> 2l
+" nmap <s-j> 2j
+" nmap <s-k> 2k
+" nmap <s-h> 2h
+" nmap <s-l> 2l
 " Navigate 4x faster when holding down Ctrl
 nmap <c-j> 4j
 nmap <c-k> 4k
 nmap <c-h> 4h
 nmap <c-l> 4l
+
+" Remove nasty grey from git gutter background
+highlight clear SignColumn
