@@ -1,13 +1,32 @@
-" For solarized theme
+" Need this for base16:
+"   (https://github.com/chriskempson/base16-vim) 
+let base16colorspace=256  " Access colors present in 256 colorspace"
+
 syntax enable
 set background=dark
-colorscheme solarized
+
+" Color Themes
+" colorscheme solarized
+" colorscheme lucius
+" colo seoul256
+" colorscheme base16-solarized
+colorscheme base16-solarized
+
 
 " For vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 set t_Co=256
-let g:airline_theme = 'luna'
+" let g:airline_theme = 'luna'
+" let g:airline_theme = 'solarized'
+
+" Show relative line numbers, opposed to absolute:
+"   (http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/)
+set relativenumber 
+
+" Hides the tilde(~) for empty lines
+" WARNING! this approach is not a complete solution, because this highlighting group is used also for list chars (see the list and listchars options) making it impossible to specify highlighting just for the beyond-last-line markings.
+highlight NonText ctermfg=bg guifg=bg
 
 " For syntastic
 let g:syntastic_check_on_open=1
@@ -25,7 +44,7 @@ set completeopt-=preview
 let NERDTreeShowHidden=1
 
 " highlight current line"
-set cursorline
+" set cursorline
 
 " highlight matches when searched
 set hlsearch
