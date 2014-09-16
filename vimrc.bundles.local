@@ -10,6 +10,11 @@ Bundle 'mhinz/vim-signify'
 Bundle 'nono/vim-handlebars'
 Bundle 'dsawardekar/ember.vim'
 Bundle "mattn/emmet-vim"
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'junegunn/goyo.vim'
+Bundle 'junegunn/limelight.vim'
 
 " Color themes
 Bundle 'altercation/vim-colors-solarized'

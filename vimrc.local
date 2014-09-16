@@ -79,3 +79,20 @@ nmap <c-l> 4l
 
 " Remove nasty grey from git gutter background
 highlight clear SignColumn
+
+" LimeLight integration with Goyo
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+
+" enable markdown syntax highlight for my .md files.
+" THIS ISN'T WORKING
+" au BufRead,BufNewFile *.md set filetype=markdown
+" So I added BufWinEnter based on:
+" http://superuser.com/questions/113455/vim-highlighting-for-specific-file-types-where-to-put-syntax-files-vim-events
+au BufWinEnter,BufRead,BufNewFile *.md set filetype=markdown
+
+" disable folding for vim-markdown.vim
+let g:vim_markdown_folding_disabled=1
+
+" disable folding". When in markdown, files kept folding
+set nofoldenable
