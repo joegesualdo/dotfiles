@@ -96,3 +96,6 @@ let g:vim_markdown_folding_disabled=1
 
 " disable folding". When in markdown, files kept folding
 set nofoldenable
+
+" This removes the grey color behing the line numbers
+" highlight LineNr ctermbg=black
