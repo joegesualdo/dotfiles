@@ -16,6 +16,7 @@ Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'junegunn/goyo.vim'
 Bundle 'junegunn/limelight.vim'
 Bundle 'chase/vim-ansible-yaml'
+Bundle "ekalinin/Dockerfile.vim"
 
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
