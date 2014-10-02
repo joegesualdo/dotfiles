@@ -101,4 +101,4 @@ set nofoldenable
 " highlight LineNr ctermbg=black
 
 " Change the indent vertical line character
-"let g:indentLine_char = '|'
+"let g:indentLine_char = '︙'
