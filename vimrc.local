@@ -99,3 +99,6 @@ set nofoldenable
 
 " This removes the grey color behing the line numbers
 " highlight LineNr ctermbg=black
+
+" Change the indent vertical line character
+"let g:indentLine_char = '|'

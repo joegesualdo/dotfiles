@@ -17,6 +17,7 @@ Bundle 'junegunn/goyo.vim'
 Bundle 'junegunn/limelight.vim'
 Bundle 'chase/vim-ansible-yaml'
 Bundle "ekalinin/Dockerfile.vim"
+Bundle 'Yggdroot/indentLine'
 
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
