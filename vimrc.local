@@ -102,3 +102,15 @@ set nofoldenable
 
 " Change the indent vertical line character
 "let g:indentLine_char = '︙'
+
+" Send rspec from vim to tmux:
+" http://robots.thoughtbot.com/use-rspec-vim-with-tmux-and-dispatch
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+
+" vim-rspec mappings
+"   http://robots.thoughtbot.com/running-specs-from-vim-sent-to-tmux-via-tslime
+map <Leader>a :call RunAllSpecs()<CR>
+
+" Add sytax highlighting for makefiles
+"   style definitions can be found at ~/.vim/syntax/make.vim
+au BufRead,BufNewFile *.make set filetype=make
