@@ -20,7 +20,9 @@ Bundle "ekalinin/Dockerfile.vim"
 Bundle 'Yggdroot/indentLine'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'Keithbsmiley/swift.vim'
-
+Bundle 'jplaut/vim-arduino-ino'
+Bundle 'mxw/vim-jsx'
+Plugin 'suan/vim-instant-markdown'
 
 " Color themes
 Bundle 'altercation/vim-colors-solarized'

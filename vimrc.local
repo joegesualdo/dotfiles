@@ -1,3 +1,8 @@
+" TODO: Go through file and arrange the lines into
+" related groups. Some places to start might be: “Basic Settings”,
+" “FileType-specific settings”, “Mappings”, and “Status Line”. Add folding
+" markers with headings to each section.
+"
 " Need this for base16:
 "   (https://github.com/chriskempson/base16-vim) 
 let base16colorspace=256  " Access colors present in 256 colorspace"
@@ -29,8 +34,16 @@ set relativenumber
 highlight NonText ctermfg=bg guifg=bg
 
 " For syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" configure Syntastic to use ESLint
+"   https://github.com/jaxbot/syntastic-react
+let g:syntastic_javascript_checkers = ['eslint']
 
 " For YouCompleteMe
 " These are the tweaks I apply to YCM's config, you don't need them but they
@@ -42,6 +55,7 @@ set completeopt-=preview
 
 " For NerdTree
 let NERDTreeShowHidden=1
+nnoremap <Leader>nt :NERDTree<CR>
 
 " highlight current line"
 " set cursorline
@@ -109,8 +123,22 @@ let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
 " vim-rspec mappings
 "   http://robots.thoughtbot.com/running-specs-from-vim-sent-to-tmux-via-tslime
-map <Leader>a :call RunAllSpecs()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
 
 " Add sytax highlighting for makefiles
 "   style definitions can be found at ~/.vim/syntax/make.vim
 au BufRead,BufNewFile *.make set filetype=make
+
+" Toggle spell checking on and off with ` s`
+nnoremap <silent> <leader>s :set spell!<CR>
+" Set region to USA
+set spelllang=en_us
+
+" For vim-instant-markdown :
+"   https://github.com/suan/vim-instant-markdown
+" This will prevent vim-instand-markdow from opening up a broswer
+"   preview when you open the markdown file. Instead we just enter
+"   ":InstantMarkdownPreview" when we want to open the markdow 
+"   preview.
+let g:instant_markdown_autostart = 0
+nnoremap <Leader>prev :InstantMarkdownPreview<CR>

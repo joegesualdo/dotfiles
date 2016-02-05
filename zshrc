@@ -65,3 +65,5 @@ export PATH=".git/safe/../../bin:$PATH"
 
 # added by travis gem
 [ -f /Users/joegesualdo/.travis/travis.sh ] && source /Users/joegesualdo/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
