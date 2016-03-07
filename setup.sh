@@ -5,6 +5,7 @@ do
     [ "$name" != ".gitignore" ] && \
     [ "$name" != "setup.sh" ] && \
     [ "$name" != "LICENSE" ] && \
+    [ "$name" != "utilities" ] && \
     [ "$name" != "README.md" ] ;then
     ln -s $entry "$HOME/.$name"
   fi

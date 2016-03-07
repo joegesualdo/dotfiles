@@ -69,8 +69,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 export PAGER="/usr/bin/less"
 
-export VAGRANT_SSH_KEY="/Users/joegesualdo/.ssh/id_rsa_nopass"
-
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -112,7 +110,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="~/vendor/bundle/bin:$PATH"
 # To add zsh-syntax-highlighing"
 #   https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-# source /Users/joegesualdo/Desktop/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOME/dotfiles/utilities/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # https://github.com/sindresorhus/pure#getting-started
 fpath=( "$HOME/dotfiles/zsh/functions" $fpath )
@@ -123,6 +121,6 @@ PURE_CMD_MAX_EXEC_TIME=10
 prompt pure
 
 # added by travis gem
-[ -f /Users/joegesualdo/.travis/travis.sh ] && source /Users/joegesualdo/.travis/travis.sh
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
