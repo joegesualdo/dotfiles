@@ -1,3 +1,4 @@
+" OLD THOUGHTBOT SETTTINGS
 " Use Vim settings, rather then Vi settings. This setting must be as early as
 " possible, as it has side effects.
 set nocompatible
@@ -22,6 +23,10 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" Load vim-plug
+" if empty(glob("~/.vim/autoload/plug.vim"))
+"   execute '!sudo curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+" endif
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -43,12 +48,12 @@ augroup vimrcEx
     \ endif
 
   " Cucumber navigation commands
-  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+  " autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
+  " autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
 
   " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  " autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  " autocmd BufRead,BufNewFile *.md set filetype=markdown
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
@@ -78,9 +83,9 @@ if executable('ag')
 endif
 
 " Color scheme
-colorscheme github
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+" colorscheme github
+" highlight NonText guibg=#060606
+" highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
 set number
@@ -104,9 +109,9 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
+" " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
+" let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+"
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
 
@@ -120,9 +125,9 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+" nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+" nnoremap <Leader>s :call RunNearestSpec()<CR>
+" nnoremap <Leader>l :call RunLastSpec()<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -141,6 +146,156 @@ nnoremap <C-l> <C-w>l
 let g:syntastic_check_on_open=1
 
 " Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+" if filereadable($HOME . "/.vimrc.local")
+"   source ~/.vimrc.local
+" endif
+" END OLD THOUGHTBOT SETTINGS
+
+" TODO: Go through file and arrange the lines into
+" related groups. Some places to start might be: “Basic Settings”,
+" “FileType-specific settings”, “Mappings”, and “Status Line”. Add folding
+" markers with headings to each section.
+"
+" Need this for base16:
+"   (https://github.com/chriskempson/base16-vim) 
+let base16colorspace=256  " Access colors present in 256 colorspace"
+
+syntax enable
+set background=dark
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Color Themes
+" colorscheme solarized
+" colorscheme lucius
+" colo seoul256
+" colorscheme base16-solarized
+" colorscheme OceanicNext
+colorscheme SpacegrayEighties
+
+
+
+" For vim-airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+set t_Co=256
+" let g:airline_theme = 'luna'
+" let g:airline_theme = 'solarized'
+let g:airline_theme='oceanicnext'
+
+" Show relative line numbers, opposed to absolute:
+"   (http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/)
+set relativenumber 
+
+" Hides the tilde(~) for empty lines
+" WARNING! this approach is not a complete solution, because this highlighting group is used also for list chars (see the list and listchars options) making it impossible to specify highlighting just for the beyond-last-line markings.
+highlight NonText ctermfg=bg guifg=bg
+
+" For syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" configure Syntastic to use ESLint
+"   https://github.com/jaxbot/syntastic-react
+let g:syntastic_javascript_checkers = ['eslint']
+
+" For YouCompleteMe
+" These are the tweaks I apply to YCM's config, you don't need them but they
+" might help. YCM gives you popups and splits by default that some people might not
+" like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
+" For NerdTree
+let NERDTreeShowHidden=1
+nnoremap <Leader>nt :NERDTree<CR>
+
+" highlight current line"
+" set cursorline
+
+" highlight matches when searched
+set hlsearch
+
+" TODO: Create shortcut to turn of highlight after vim is done searching
+" turn off search highlight
+" nnoremap <leader><space> :nohlsearch<CR>
+
+" highlights the background in a subtle red for text that goes over the 80 column limit
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
+
+" Key mappings for xmpfilter:
+" http://commandercoriander.net/blog/2012/10/10/evaluate-lines-of-ruby-in-vim/
+nmap <buffer> <F5> <Plug>(xmpfilter-run)
+xmap <buffer> <F5> <Plug>(xmpfilter-run)
+imap <buffer> <F5> <Plug>(xmpfilter-run)
+nmap <buffer> <F4> <Plug>(xmpfilter-mark)
+xmap <buffer> <F4> <Plug>(xmpfilter-mark)
+imap <buffer> <F4> <Plug>(xmpfilter-mark)
+
+" Navigate 2x faster when holding down Shift
+" nmap <s-j> 2j
+" nmap <s-k> 2k
+" nmap <s-h> 2h
+" nmap <s-l> 2l
+" Navigate 4x faster when holding down Ctrl
+nmap <c-j> 4j
+nmap <c-k> 4k
+nmap <c-h> 4h
+nmap <c-l> 4l
+
+" Remove nasty grey from git gutter background
+highlight clear SignColumn
+
+" LimeLight integration with Goyo
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+
+" enable markdown syntax highlight for my .md files.
+" THIS ISN'T WORKING
+" au BufRead,BufNewFile *.md set filetype=markdown
+" So I added BufWinEnter based on:
+" http://superuser.com/questions/113455/vim-highlighting-for-specific-file-types-where-to-put-syntax-files-vim-events
+au BufWinEnter,BufRead,BufNewFile *.md set filetype=markdown
+
+" disable folding for vim-markdown.vim
+let g:vim_markdown_folding_disabled=1
+
+" disable folding". When in markdown, files kept folding
+set nofoldenable
+
+" This removes the grey color behing the line numbers
+" highlight LineNr ctermbg=black
+
+" Change the indent vertical line character
+"let g:indentLine_char = '︙'
+
+" Send rspec from vim to tmux:
+" http://robots.thoughtbot.com/use-rspec-vim-with-tmux-and-dispatch
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+
+" vim-rspec mappings
+"   http://robots.thoughtbot.com/running-specs-from-vim-sent-to-tmux-via-tslime
+nnoremap <Leader>a :call RunAllSpecs()<CR>
+
+" Add sytax highlighting for makefiles
+"   style definitions can be found at ~/.vim/syntax/make.vim
+au BufRead,BufNewFile *.make set filetype=make
+
+" Toggle spell checking on and off with ` s`
+nnoremap <silent> <leader>s :set spell!<CR>
+" Set region to USA
+set spelllang=en_us
+
+" For vim-instant-markdown :
+"   https://github.com/suan/vim-instant-markdown
+" This will prevent vim-instand-markdow from opening up a broswer
+"   preview when you open the markdown file. Instead we just enter
+"   ":InstantMarkdownPreview" when we want to open the markdow 
+"   preview.
+let g:instant_markdown_autostart = 0
+nnoremap <Leader>prev :InstantMarkdownPreview<CR>

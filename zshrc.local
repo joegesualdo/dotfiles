@@ -35,9 +35,9 @@ man() {
 #   (https://github.com/chriskempson/tomorrow-theme)
 # This script enables support:
 #   (https://github.com/chriskempson/base16-shell)
-BASE16_SCHEME="tomorrow"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+# BASE16_SCHEME="tomorrow"
+# BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+# [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Add auto-complete to npm
 . <(npm completion)
@@ -45,3 +45,12 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 # For rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="~/vendor/bundle/bin:$PATH"
+source /Users/joegesualdo/Desktop/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# https://github.com/sindresorhus/pure#getting-started
+fpath=( "$HOME/dotfiles/zsh/functions" $fpath )
+
+# User for the pur promt
+autoload -U promptinit && promptinit
+PURE_CMD_MAX_EXEC_TIME=10
+prompt pure
