@@ -6,7 +6,6 @@ do
     [ "$name" != "setup.sh" ] && \
     [ "$name" != "LICENSE" ] && \
     [ "$name" != "README.md" ] ;then
-    # ln -s $entry "$HOME.name"
     ln -s $entry "$HOME/.$name"
   fi
 done
