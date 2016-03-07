@@ -110,7 +110,9 @@ man() {
 # For rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="~/vendor/bundle/bin:$PATH"
-source /Users/joegesualdo/Desktop/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# To add zsh-syntax-highlighing"
+#   https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+# source /Users/joegesualdo/Desktop/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # https://github.com/sindresorhus/pure#getting-started
 fpath=( "$HOME/dotfiles/zsh/functions" $fpath )
