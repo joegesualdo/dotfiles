@@ -28,6 +28,8 @@ endif
 "   execute '!sudo curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 " endif
 if filereadable(expand("~/.vimrc.bundles"))
+" if filereadable(expand('%:p:h')."/vimrc.bundles")
+  " source expand('%:p:h')."/vimrc.bundles"
   source ~/.vimrc.bundles
 endif
 

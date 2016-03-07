@@ -1,0 +1,16 @@
+#!/bin/bash -l
+
+_cwd="$(pwd)"
+# TODO: Allow user to pass the path to a specific directory
+# if [[ $# -eq 0 ]] ; then
+#   echo 'Must provide a directory path'
+#   exit 0
+# fi
+
+IFS="\n"
+for file in "$_cwd""/"*;
+do
+  mv "$file" "${file//[[:space:]]}"
+done
+echo "Whitespaces have been removed from file names in directory: $_cwd"
+

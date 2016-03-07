@@ -1,0 +1,74 @@
+#!/Users/joegesualdo/.rbenv/shims/ruby
+
+require 'rubygems'
+require 'colorize'
+require 'nokogiri'
+require 'httparty'
+require 'uri'
+require 'open-uri'
+# str = "\x12\x34\x56\x78\x9a\xbc\xde\xf1\x23\x45\x67\x89\xab\xcd\xef\x12\x34\x56\x78\x9a".force_encoding('ASCII-8BIT')
+# puts URI::encode(str)
+
+# Tried on undermine
+
+search_term = URI::encode(ARGV[0])
+uri = URI.parse("http://app.vocabulary.com/app/1.0/dictionary/search?word=#{search_term}&tz=America%2FNew_York&tzo=-300&appver=1.0.0")
+
+page = Nokogiri::HTML(HTTParty.get(uri))
+
+puts "\n"
+
+puts "SHORT DEFINTION----------------------".colorize(:blue)
+puts page.css("p.short")[0].text
+puts ""
+puts "LONG DEFINTION-----------------------".colorize(:blue)
+puts page.css("p.long")[0].text
+puts ""
+puts "DEFINITIONS--------------------------".colorize(:blue)
+page.css(".section.definition .sense").each_with_index do |definition_area, index|
+  definition = definition_area.css("h3.definition").text.to_s.strip.gsub(/\s+/, ' ')
+  print "#{index + 1}) "
+  parts = definition.split(" ")
+  parts.each_with_index do |part , index|
+    if index == 0
+      print part.to_s.colorize(:red)
+    else
+      print part.to_s
+    end
+    print " "
+  end
+  print "\n"
+
+  # puts definition.at_xpath("//h3[@class='definition'][1]/text()[2]").to_s.strip
+end
+# SENTENCES
+
+response = HTTParty.get("http://corpus.vocabulary.com/api/1.0/examples.json?query=#{ARGV[0]}&maxResults=24&startOffset=0&filter=3&tz=America%2FNew_York&tzo=-300&appver=1.0.0")
+
+response = JSON.parse(response.body)
+
+sentences = []
+response['result']['sentences'].each do |sentence|
+  sentences << sentence['sentence']
+end
+
+puts ""
+puts "SENTENCES---------------------------".colorize(:blue)
+SENTENCE_COUNT = 10
+(1..SENTENCE_COUNT).each_with_index do |sentence, index|
+  sentence = "#{index + 1}) #{sentences[index]}"
+  sentence_parts = sentence.split(" ")
+  sentence_parts.each do |part|
+    if part.to_s.downcase.delete('^a-zA-Z').include? ARGV[0].downcase
+      print part.to_s.colorize(:yellow)
+    else
+      print part.to_s
+    end
+    print(" ");
+  end
+  print("\n")
+end
+
+print "\n"
+
+

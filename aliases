@@ -1,3 +1,4 @@
+## THOUGHTBOT Dotfiles =====
 # Unix
 alias tlf="tail -f"
 alias ln='ln -v'
@@ -34,5 +35,15 @@ alias rk="rake"
 alias s="rspec"
 alias z="zeus"
 
-# Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+## END THOUGHTBOT Dotfiles =====
+
+# Navigation
+alias la='ls -lahG'
+
+# Project Navigation
+alias st='cd ~/code/rails/storage'
+alias hb='cd ~/code/rails/handybook'
+
+# Git
+alias gst='git st'
+alias glg='git lg'

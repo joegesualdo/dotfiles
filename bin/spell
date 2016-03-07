@@ -1,0 +1,11 @@
+#!/Users/joegesualdo/.rbenv/shims/ruby
+
+letter_array = ARGV[0].split("")
+
+`say "#{ARGV[0]}"`
+sleep 1
+letter_array.each do |letter|
+  `say "#{letter}"`
+end
+
+
