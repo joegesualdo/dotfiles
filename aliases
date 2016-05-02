@@ -13,6 +13,7 @@ alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 alias e="$EDITOR"
 alias v="$VISUAL"
+alias rm="rm -i"
 
 # git
 alias gci="git pull --rebase && rake && git push"
@@ -47,3 +48,6 @@ alias hb='cd ~/code/rails/handybook'
 # Git
 alias gst='git st'
 alias glg='git lg'
+
+# vlc
+alias vlc='~/Applications/VLC.app/Contents/MacOS/VLC -I rc'

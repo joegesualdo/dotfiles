@@ -1,2 +1,4 @@
 !bin
 vim/bundle/
+atom/packages/
+atom/storage/

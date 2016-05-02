@@ -124,3 +124,14 @@ prompt pure
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Add node packages to bin for node version 5.6
+export PATH="/usr/local/n/versions/node/5.6.0/bin:$PATH"
+
+# Add go executables to path
+#  we are setting the GOROOT environment variable to point to the directory
+#  in which it was installed. This way it's easier to change the location later.
+export GOROOT="/usr/local/go"
+# export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/code/go
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
