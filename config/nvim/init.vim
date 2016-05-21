@@ -27,10 +27,10 @@ endif
 " if empty(glob("~/.vim/autoload/plug.vim"))
 "   execute '!sudo curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 " endif
-if filereadable(expand("~/.vimrc.bundles"))
+if filereadable(expand("~/.config/nvim/bundles.vim"))
 " if filereadable(expand('%:p:h')."/vimrc.bundles")
   " source expand('%:p:h')."/vimrc.bundles"
-  source ~/.vimrc.bundles
+  source ~/.config/nvim/bundles.vim
 endif
 
 filetype plugin indent on
@@ -145,7 +145,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+" let g:syntastic_check_on_open=1
 
 " Local config
 " if filereadable($HOME . "/.vimrc.local")
@@ -174,7 +174,8 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " colorscheme OceanicNext
 colorscheme SpacegrayEighties
 
-
+" Hihglight the line the cursor is on
+set cursorline
 
 " For vim-airline
 set laststatus=2
@@ -186,23 +187,32 @@ let g:airline_theme='oceanicnext'
 
 " Show relative line numbers, opposed to absolute:
 "   (http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/)
-set relativenumber 
+" set relativenumber 
 
 " Hides the tilde(~) for empty lines
 " WARNING! this approach is not a complete solution, because this highlighting group is used also for list chars (see the list and listchars options) making it impossible to specify highlighting just for the beyond-last-line markings.
 highlight NonText ctermfg=bg guifg=bg
 
 " For syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" configure Syntastic to use ESLint
-"   https://github.com/jaxbot/syntastic-react
-let g:syntastic_javascript_checkers = ['eslint']
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" " configure Syntastic to use ESLint
+" "   https://github.com/jaxbot/syntastic-react
+" let g:syntastic_javascript_checkers = ['eslint']
+"
+" For Neomake
+let g:python3_host_prog = '/usr/local/bin/python3'
+autocmd! BufWritePost * Neomake
+highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
+let g:neomake_warning_sign={'text': '⚠', 'texthl': 'NeomakeErrorMsg'}
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_css_enabled_makers = ['stylelint']
+
 
 
 " For YouCompleteMe
@@ -302,3 +312,17 @@ set spelllang=en_us
 "   preview.
 let g:instant_markdown_autostart = 0
 nnoremap <Leader>prev :InstantMarkdownPreview<CR>
+
+" FZF
+nnoremap <c-p> :FZF<CR>
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
+" For deoplete.
+"   https://github.com/Shougo/deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+

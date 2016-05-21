@@ -128,6 +128,13 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Add node packages to bin for node version 5.6
 export PATH="/usr/local/n/versions/node/5.6.0/bin:$PATH"
 
+# For npm
+#   https://gist.github.com/DanHerbert/9520689
+export PATH="$HOME/.node/bin:$PATH"
+
+# Installing executables for npm moduels
+export PATH="$HOME/.npm-packages/bin:$PATH"
+
 # Add go executables to path
 #  we are setting the GOROOT environment variable to point to the directory
 #  in which it was installed. This way it's easier to change the location later.
@@ -135,3 +142,13 @@ export GOROOT="/usr/local/go"
 # export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+# For FZF
+# Setting ag as the default source for fzf
+#   So fzf (w/o pipe) will use ag instead of find
+#   Same as doing this
+export FZF_DEFAULT_COMMAND='ag -g ""'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

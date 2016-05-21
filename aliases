@@ -14,6 +14,7 @@ alias -g ONE="| awk '{ print \$1}'"
 alias e="$EDITOR"
 alias v="$VISUAL"
 alias rm="rm -i"
+alias vim="nvim"
 
 # Run Rubocop against only the files you have modified locally
 alias rubodiff="git status --porcelain | cut -c4- | grep '.rb' | xargs rubocop"
