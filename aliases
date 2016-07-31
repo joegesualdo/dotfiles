@@ -54,3 +54,5 @@ alias glg='git lg'
 
 # vlc
 alias vlc='~/Applications/VLC.app/Contents/MacOS/VLC -I rc'
+
+alias ni='npm-better-init'

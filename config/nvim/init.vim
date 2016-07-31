@@ -326,3 +326,6 @@ let g:fzf_tags_command = 'ctags -R'
 "   https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 
+" Allow ‘yank’ and paste using y and p from Vim as well, and make it
+"   usable by pasting anywhere outsite of vim
+set clipboard=unnamed

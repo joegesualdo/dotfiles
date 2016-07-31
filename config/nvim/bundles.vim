@@ -64,8 +64,6 @@ Plug 'jplaut/vim-arduino-ino'
 " ###########################
 " # Syntax Coloring
 " ###########################
-" React JSX syntax highlighting and indenting for vim.
-Plug 'mxw/vim-jsx'
 " Syntax highlighting and other things for nginx
 Plug 'mv/mv-vim-nginx'
 "Markdown syntax
@@ -78,9 +76,16 @@ Plug 'hhff/SpacegrayEighties.vim'
 Plug 'mhartington/oceanic-next'
 
 " Javascript settings: http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
-Plug 'jelera/vim-javascript-syntax'
-Plug 'pangloss/vim-javascript'
+" Plug 'jelera/vim-javascript-syntax'
+" Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/es.next.syntax.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'gavocanov/vim-js-indent' "This was added because es6 indentation was off
+Plug 'othree/javascript-libraries-syntax.vim'
+" React JSX syntax highlighting and indenting for vim.
+Plug 'mxw/vim-jsx'
+
 Plug 'Raimondi/delimitMate'
 " Removing this to speed up vim
 " Plug 'Valloric/YouCompleteMe'

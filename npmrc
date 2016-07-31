@@ -1,1 +1,3 @@
-prefix=~/.npm-packages
+prefix=/Users/jgesualdo/.npm-packages
+//registry.npmjs.org/:_authToken=ab1e2900-f7ac-4aa7-877e-202b705e5723
+progress=true
