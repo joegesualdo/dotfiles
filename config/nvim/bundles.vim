@@ -101,6 +101,8 @@ Plug 'junegunn/fzf.vim'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
 
+Plug 'lambdatoast/elm.vim'
+
 " For autocompletion
 function! DoRemote(arg)
   UpdateRemotePlugins
