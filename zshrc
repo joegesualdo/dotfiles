@@ -135,6 +135,9 @@ export PATH="$HOME/.node/bin:$PATH"
 # Installing executables for npm moduels
 export PATH="$HOME/.npm-packages/bin:$PATH"
 
+# You will need to set up the PATH environment variable in your terminal to have access to Yarn’s binaries globally.
+export PATH="$PATH:`yarn global bin`"
+
 # Add go executables to path
 #  we are setting the GOROOT environment variable to point to the directory
 #  in which it was installed. This way it's easier to change the location later.
@@ -155,3 +158,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # added by travis gem
 [ -f /Users/jgesualdo/.travis/travis.sh ] && source /Users/jgesualdo/.travis/travis.sh
+
+# 
+eval $(docker-machine env default)
+export DOCKER_HOST=default

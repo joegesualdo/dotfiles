@@ -74,7 +74,13 @@ Plug 'plasticboy/vim-markdown'
 Plug 'hhff/SpacegrayEighties.vim'
 " Used for tmux scheme
 Plug 'mhartington/oceanic-next'
+Plug 'trevordmiller/nova-vim'
 
+" for full HTML5 colors
+Plug 'othree/html5.vim'
+
+"for full CSS Colors
+Plug 'hail2u/vim-css3-syntax'
 " Javascript settings: http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'pangloss/vim-javascript'
@@ -94,6 +100,9 @@ Plug 'marijnh/tern_for_vim'
 "For NEOVim
 Plug 'neomake/neomake'
 
+" For auto-formatting
+Plug 'sbdchd/neoformat'
+
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -101,7 +110,11 @@ Plug 'junegunn/fzf.vim'
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
 
-Plug 'lambdatoast/elm.vim'
+" Plug 'lambdatoast/elm.vim'
+Plug 'ElmCast/elm-vim'
+
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
 
 " For autocompletion
 function! DoRemote(arg)

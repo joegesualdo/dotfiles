@@ -172,7 +172,11 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " colo seoul256
 " colorscheme base16-solarized
 " colorscheme OceanicNext
-colorscheme SpacegrayEighties
+"
+" LOVE
+" colorscheme SpacegrayEighties
+"
+colorscheme nova
 
 " Hihglight the line the cursor is on
 set cursorline
@@ -191,7 +195,8 @@ let g:airline_theme='oceanicnext'
 
 " Hides the tilde(~) for empty lines
 " WARNING! this approach is not a complete solution, because this highlighting group is used also for list chars (see the list and listchars options) making it impossible to specify highlighting just for the beyond-last-line markings.
-highlight NonText ctermfg=bg guifg=bg
+" highlight NonText ctermfg=237 guifg=#073642
+
 
 " For syntastic
 " set statusline+=%#warningmsg#
@@ -329,3 +334,17 @@ let g:deoplete#enable_at_startup = 1
 " Allow ‘yank’ and paste using y and p from Vim as well, and make it
 "   usable by pasting anywhere outsite of vim
 set clipboard=unnamed
+
+" For NeoFormat
+let g:neoformat_enabled_javascript = ['eslint_d']
+let g:neoformat_enabled_ruby = ['rubocop']
+" run format on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
+" Prettier
+" autocmd FileType javascript set formatprg=prettier\ --stdin
+" autocmd BufWritePre *.js :normal gggqG " auto format on save with prettier
+"  " restore cursor pointer on save with prettier
+" " autocmd BufWritePre *.js exe 'normal! gggqG\<C-o>\<C-o>'

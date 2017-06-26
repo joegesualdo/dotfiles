@@ -87,7 +87,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'marijnh/tern_for_vim'
 
 " Elm
-Plug "ambdatoast/elm.vim"
+Plug 'mbdatoast/elm.vim'
 
 " Add plugins to &runtimepath
 call plug#end()

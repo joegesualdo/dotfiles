@@ -1,0 +1,93 @@
+" OLD THOUGHTBOT SETTTINGS
+" Use Vim settings, rather then Vi settings. This setting must be as early as
+" possible, as it has side effects.
+set nocompatible
+
+" Leader
+let mapleader = " "
+
+set backspace=2   " Backspace deletes like most programs in insert mode
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set history=50
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+set autowrite     " Automatically :write before running commands
+
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+" Numbers
+set number
+set numberwidth=5
+
+" Index ctags from any project, including those outside Rails
+map <Leader>ct :!ctags -R .<CR>
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+set relativenumber 
+
+" " highlight current line
+" " set cursorline
+"
+" " highlight matches when searched
+set hlsearch
+
+" Navigate 2x faster when holding down Shift
+" nmap <s-j> 2j
+" nmap <s-k> 2k
+" nmap <s-h> 2h
+" nmap <s-l> 2l
+" Navigate 4x faster when holding down Ctrl
+nmap <c-j> 4j
+nmap <c-k> 4k
+nmap <c-h> 4h
+nmap <c-l> 4l
+
+" Remove nasty grey from git gutter background
+highlight clear SignColumn
+
+" enable markdown syntax highlight for my .md files.
+" THIS ISN'T WORKING
+" au BufRead,BufNewFile *.md set filetype=markdown
+" So I added BufWinEnter based on:
+" http://superuser.com/questions/113455/vim-highlighting-for-specific-file-types-where-to-put-syntax-files-vim-events
+au BufWinEnter,BufRead,BufNewFile *.md set filetype=markdown
+
+" disable folding". When in markdown, files kept folding
+set nofoldenable
+
+" Add sytax highlighting for makefiles
+"   style definitions can be found at ~/.vim/syntax/make.vim
+au BufRead,BufNewFile *.make set filetype=make
+
+" Toggle spell checking on and off with ` s`
+nnoremap <silent> <leader>s :set spell!<CR>
+" Set region to USA
+set spelllang=en_us
