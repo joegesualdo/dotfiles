@@ -73,7 +73,8 @@
   st = status -sb
   dsf = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
 [core]
-	excludesfile = /Users/joegesualdo/.gitignore
+  editor = 'nvim'
+  excludesfile = /Users/joegesualdo/.gitignore
   autocrlf = input
 [merge]
   ff = only
