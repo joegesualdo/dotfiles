@@ -337,11 +337,11 @@ set clipboard=unnamed
 
 " For NeoFormat
 let g:neoformat_enabled_javascript = ['eslint_d']
-let g:neoformat_enabled_ruby = ['rubocop']
+" let g:neoformat_enabled_ruby = ['rubocop']
 " run format on save
 augroup fmt
   autocmd!
-  autocmd BufWritePre * Neoformat
+  autocmd BufWritePre *.js Neoformat! javascript
 augroup END
 " Prettier
 " autocmd FileType javascript set formatprg=prettier\ --stdin
