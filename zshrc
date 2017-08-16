@@ -133,7 +133,8 @@ export PATH="/usr/local/n/versions/node/5.6.0/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 
 # Installing executables for npm moduels
-export PATH="$HOME/.npm-packages/bin:$PATH"
+# export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
 
 # You will need to set up the PATH environment variable in your terminal to have access to Yarn’s binaries globally.
 export PATH="$PATH:`yarn global bin`"
