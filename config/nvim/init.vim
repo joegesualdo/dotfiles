@@ -82,6 +82,7 @@ if executable('ag')
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
 endif
 
 " Color scheme
@@ -139,10 +140,10 @@ set splitbelow
 set splitright
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
 
 " configure syntastic syntax checking to check on open as well as save
 " let g:syntastic_check_on_open=1
@@ -211,12 +212,28 @@ let g:airline_theme='oceanicnext'
 " let g:syntastic_javascript_checkers = ['eslint']
 "
 " For Neomake
-let g:python3_host_prog = '/usr/local/bin/python3'
-autocmd! BufWritePost * Neomake
-highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
-let g:neomake_warning_sign={'text': '⚠', 'texthl': 'NeomakeErrorMsg'}
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_css_enabled_makers = ['stylelint']
+" let g:python3_host_prog = '/usr/local/bin/python3'
+" autocmd! BufWritePost * Neomake
+" highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
+" let g:neomake_warning_sign={'text': '⚠', 'texthl': 'NeomakeErrorMsg'}
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_css_enabled_makers = ['stylelint']
+
+"For Ale
+" Put this in vimrc or a plugin file of your own.
+" After this is configured, :ALEFix will try and fix your JS code with ESLint.
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+
+" Set this setting in vimrc if you want to fix files automatically on save.
+" This is off by default.
+" let g:ale_fixers = {'javascript': ['prettier_standard']}
+" let g:ale_linters = {'javascript': ['']}
 
 
 
@@ -261,10 +278,10 @@ imap <buffer> <F4> <Plug>(xmpfilter-mark)
 " nmap <s-h> 2h
 " nmap <s-l> 2l
 " Navigate 4x faster when holding down Ctrl
-nmap <c-j> 4j
-nmap <c-k> 4k
-nmap <c-h> 4h
-nmap <c-l> 4l
+" nmap <c-j> 4j
+" nmap <c-k> 4k
+" nmap <c-h> 4h
+" nmap <c-l> 4l
 
 " Remove nasty grey from git gutter background
 highlight clear SignColumn
@@ -318,6 +335,8 @@ set spelllang=en_us
 let g:instant_markdown_autostart = 0
 nnoremap <Leader>prev :InstantMarkdownPreview<CR>
 
+filetype plugin on
+
 " FZF
 nnoremap <c-p> :FZF<CR>
 " [Buffers] Jump to the existing window if possible
@@ -326,10 +345,6 @@ let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -R'
-
-" For deoplete.
-"   https://github.com/Shougo/deoplete.nvim
-let g:deoplete#enable_at_startup = 1
 
 " Allow ‘yank’ and paste using y and p from Vim as well, and make it
 "   usable by pasting anywhere outsite of vim
@@ -348,3 +363,35 @@ augroup END
 " autocmd BufWritePre *.js :normal gggqG " auto format on save with prettier
 "  " restore cursor pointer on save with prettier
 " " autocmd BufWritePre *.js exe 'normal! gggqG\<C-o>\<C-o>'
+"
+
+
+" deoplete
+" For deoplete.
+"   https://github.com/Shougo/deoplete.nvim
+let g:deoplete#enable_at_startup = 0
+
+let g:deoplete#max_menu_width = 1000000
+let g:deoplete#max_abbr_width = 1000000
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.purescript =
+      \ ['\w*']
+
+" Remaps jk and kj to escape
+" inoremap jk <Esc>
+" inoremap kj <Esc>
+" Removes esc to help me move to jk or jk
+" inoremap <Esc> <Nop>
+"
+
+" http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
+map <C-k> :FZF<CR>
+" This allows us to use fzf to sarch text in a file (:FzfAg)
+" https://github.com/junegunn/fzf.vim/issues/83
+let g:fzf_command_prefix = 'Fzf'
+" nnoremap <Leader>f :FzfAg<CR>
+nnoremap <C-f> :FzfAg<CR>
+
+" For nerdcommenter
+let g:NERDSpaceDelims = 1

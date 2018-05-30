@@ -8,17 +8,19 @@ call plug#begin("~/.config/nvim/plugged/")
 Plug 'danro/rename.vim'
 " Plug 'kien/ctrlp.vim'
 " Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'vim-scripts/matchit.zip'
+Plug 'Yggdroot/LeaderF'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-surround'
+" Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/tComment'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
 " Color: css/less/sass/html color preview for vim
 Plug 'https://github.com/gorodinskiy/vim-coloresque.git'
 "
+Plug 'scrooloose/nerdcommenter'
 "
 Plug 'godlygeek/tabular' "This is required for plasticboy/vim-markdown
 
@@ -98,14 +100,15 @@ Plug 'Raimondi/delimitMate'
 Plug 'marijnh/tern_for_vim'
 
 "For NEOVim
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 
 " For auto-formatting
 Plug 'sbdchd/neoformat'
 
 " Fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'rking/ag.vim'
 
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
@@ -116,11 +119,30 @@ Plug 'ElmCast/elm-vim'
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+Plug 'purescript-contrib/purescript-vim'
+Plug 'https://github.com/frigoeu/psc-ide-vim.git'
+" Plug 'frigoeu/psc-ide-vim'
+" Plug 'raichoo/purescript-vim'
+
 " For autocompletion
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" function! DoRemote(arg)
+"   UpdateRemotePlugins
+" endfunction
+
+" Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
 
 " Add plugins to &runtimepath
+
+Plug 'leafgarland/typescript-vim'
+
+Plug 'w0rp/ale'
 call plug#end()
