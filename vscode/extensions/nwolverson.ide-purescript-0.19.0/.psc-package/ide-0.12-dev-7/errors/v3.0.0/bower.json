@@ -1,0 +1,40 @@
+{
+  "name": "purescript-errors",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "keywords": [
+    "purescript",
+    "monad",
+    "errors",
+    "combinators"
+  ],
+  "authors": [
+    "Pascal Hartig <phartig@rdrei.net>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/passy/purescript-errors.git"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "purescript-either": "^3.0.0",
+    "purescript-maybe": "^3.0.0",
+    "purescript-transformers": "^3.2.0",
+    "purescript-control": "^3.0.0",
+    "purescript-eff": "^3.1.0",
+    "purescript-monoid": "^3.0.0"
+  },
+  "devDependencies": {
+    "purescript-test-unit": "^11.0.0",
+    "purescript-aff": "^3.0.0",
+    "purescript-identity": "^3.0.0",
+    "purescript-newtype": "^2.0.0"
+  }
+}

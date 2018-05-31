@@ -1,0 +1,49 @@
+{
+	"name": "nova",
+	"displayName": "nova",
+	"description": "Nova theme for Visual Studio Code",
+	"version": "0.2.2",
+	"publisher": "rebornix",
+	"icon": "assets/icon.png",
+	"galleryBanner": {
+		"color": "#445660",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"scripts": {
+		"build": "scripts/build"
+	},
+	"devDependencies": {
+		"eslint": "3.5.0",
+		"watch": "0.19.2"
+	},
+	"dependencies": {
+		"nova-colors": "2.1.5"
+	},
+	"categories": [
+		"Themes"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rebornix/vscode-nova.git"
+	},
+	"bugs": {
+		"url": "https://github.com/rebornix/vscode-nova/issues"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Nova",
+				"uiTheme": "vs-dark",
+				"path": "./themes/nova.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "258ae097-be50-4084-a73a-c8b1a36a8970",
+		"publisherId": "d30b9513-547b-4112-9c9c-0fcffa960258",
+		"publisherDisplayName": "Peng Lv"
+	}
+}

@@ -1,0 +1,28 @@
+{
+  "name": "purescript-psc-ide",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-console": "^3.0.0",
+    "purescript-argonaut": "^3.0.0",
+    "purescript-arrays": "^4.0.1",
+    "purescript-maybe": "^3.0.0",
+    "purescript-aff": "^3.0.0",
+    "purescript-node-fs": "^4.0.0",
+    "purescript-node-child-process": "^4.0.0",
+    "purescript-parallel": "^3.0.0",
+    "purescript-random": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kRITZCREEK/purescript-psc-ide.git"
+  }
+}

@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+mkdir -p themes
+echo "" > themes/nova.json
+node src/index.js >> themes/nova.json
