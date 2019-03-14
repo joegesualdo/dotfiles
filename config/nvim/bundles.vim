@@ -9,7 +9,7 @@ Plug 'danro/rename.vim'
 " Plug 'kien/ctrlp.vim'
 " Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/LeaderF'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-surround'
 " Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/ctags.vim'
@@ -143,6 +143,10 @@ Plug 'https://github.com/frigoeu/psc-ide-vim.git'
 " Add plugins to &runtimepath
 
 Plug 'leafgarland/typescript-vim'
+
+" A vim plugin that open the link to current line at Github
+"   (Also support Bitbucket and self deployed gitlab)
+Plug 'ruanyl/vim-gh-line'
 
 Plug 'w0rp/ale'
 call plug#end()

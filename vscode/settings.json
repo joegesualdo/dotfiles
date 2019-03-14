@@ -1,8 +1,21 @@
 {
-    "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Nova",
-    "editor.fontFamily": "Droid Sans Mono",
-    "editor.tabSize": 2,
-    "window.zoomLevel": -1,
-    "editor.formatOnSave": true
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Nova",
+  "editor.fontFamily": "Droid Sans Mono",
+  "editor.tabSize": 2,
+  "window.zoomLevel": -1,
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": true,
+  "editor.formatOnSaveTimeout": 3000,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.showTabs": true,
+  "workbench.editor.enablePreview": true,
+  "search.location": "panel",
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "markdown.extension.toc.updateOnSave": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "colorize.enable_search_variables": false,
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }

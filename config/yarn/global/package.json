@@ -2,9 +2,10 @@
   "dependencies": {
     "bower": "^1.8.2",
     "create-react-app": "^1.5.2",
-    "eslint": "^4.18.1",
+    "eslint": "^5.0.0",
     "instant-markdown-d": "^0.1.0",
-    "n": "^2.1.8",
+    "localtunnel": "^1.9.0",
+    "n": "^2.1.12",
     "node-gyp": "^3.6.2",
     "prettier": "^1.4.4",
     "prettier-eslint-cli": "^4.1.1",

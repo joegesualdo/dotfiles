@@ -223,12 +223,13 @@ let g:airline_theme='oceanicnext'
 " Put this in vimrc or a plugin file of your own.
 " After this is configured, :ALEFix will try and fix your JS code with ESLint.
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \}
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
+
 
 " Set this setting in vimrc if you want to fix files automatically on save.
 " This is off by default.
@@ -351,13 +352,13 @@ let g:fzf_tags_command = 'ctags -R'
 set clipboard=unnamed
 
 " For NeoFormat
-let g:neoformat_enabled_javascript = ['eslint_d']
-" let g:neoformat_enabled_ruby = ['rubocop']
+" let g:neoformat_enabled_javascript = ['eslint_d']
 " run format on save
-augroup fmt
-  autocmd!
-  autocmd BufWritePre *.js Neoformat! javascript
-augroup END
+" augroup fmt
+  " autocmd!
+  " autocmd BufWritePre *.js Neoformat! javascript
+" augroup END
+"
 " Prettier
 " autocmd FileType javascript set formatprg=prettier\ --stdin
 " autocmd BufWritePre *.js :normal gggqG " auto format on save with prettier
@@ -392,6 +393,12 @@ map <C-k> :FZF<CR>
 let g:fzf_command_prefix = 'Fzf'
 " nnoremap <Leader>f :FzfAg<CR>
 nnoremap <C-f> :FzfAg<CR>
+" Don't include filenames in :FzfAg search
+"   Resource: https://github.com/junegunn/fzf.vim/issues/346
+"   Notice: The 'FzfAg in the command. If you change the prefix above, you'll
+"           need to change this also.
+command! -bang -nargs=* FzfAg call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
 
 " For nerdcommenter
 let g:NERDSpaceDelims = 1

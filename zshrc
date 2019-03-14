@@ -103,7 +103,7 @@ man() {
 # [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Add auto-complete to npm
-. <(npm completion)
+# . <(npm completion)
 
 # For rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -150,7 +150,7 @@ export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # added by travis gem
-[ -f /Users/jgesualdo/.travis/travis.sh ] && source /Users/jgesualdo/.travis/travis.sh
+# [ -f /Users/joegesualdo/.travis/travis.sh ] && source /Users/joegesualdo/.travis/travis.sh
 
 # 
 # eval $(docker-machine env default)
@@ -158,14 +158,14 @@ export DOCKER_HOST=default
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/jgesualdo/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jgesualdo/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# [[ -f /Users/joegesualdo/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/joegesualdo/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/jgesualdo/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jgesualdo/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# [[ -f /Users/joegesualdo/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/joegesualdo/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 
 # For Haskell
-export PATH=$PATH:/Users/jgesualdo/.local/bin/
+export PATH=$PATH:/Users/joegesualdo/.local/bin/
 
 # For VSCode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
@@ -184,3 +184,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # bind -x '"\C-p": vim $(fzf);'
+#
+#
+#
+#
+#
+# Anchor
+[ -f $HOME/.zshrc.anchor ] && source $HOME/.zshrc.anchor
+
