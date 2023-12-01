@@ -1,6 +1,5 @@
 # Dotfiles
-
-This repository contains my dotfiles.
+> This repository contains my dotfiles.
 
 # Install
 
