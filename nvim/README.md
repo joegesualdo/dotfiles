@@ -6,4 +6,6 @@
 > Here are all the keybindings, for the various plugins, I have available:
 - `Ctrl + p`: open fuzzy finder
 - `Space-Space`: 
+**TODO**: add all keybindings
+
 
