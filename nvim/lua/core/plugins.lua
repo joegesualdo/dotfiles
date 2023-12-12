@@ -103,7 +103,6 @@ require("lazy").setup({
 	{
 		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
-		-- config = true,
 		opts = {},
 		config = function()
 			require("core.plugin_config.gruvbox")
