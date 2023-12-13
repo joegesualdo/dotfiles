@@ -17,7 +17,7 @@ sign({ name = "DiagnosticSignWarn", text = "▲" })
 sign({ name = "DiagnosticSignHint", text = "⚑" })
 sign({ name = "DiagnosticSignInfo", text = "" })
 
--- END Change the icons near error, warning, etc
+-- Change the icons near error, warning, etc
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
