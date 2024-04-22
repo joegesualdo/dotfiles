@@ -4,6 +4,9 @@ vim.loader.enable()
 -- vim shares clipboard with system clipboard. So things you copy from outside vim can be pasted in vim using p
 vim.opt.clipboard = "unnamedplus"
 
+-- Disables the creation of swap files.
+vim.opt.swapfile = false
+
 -- Change the icons near error, warning, etc
 local sign = function(opts)
 	vim.fn.sign_define(opts.name, {

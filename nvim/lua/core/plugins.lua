@@ -15,27 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"simrat39/rust-tools.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{
-				"rcarriga/nvim-dap-ui",
-				dependencies = {
-					{
-						-- A UI for nvim-dap which provides a good out of the box configuration.
-						"mfussenegger/nvim-dap",
-						config = function()
-							require("core.plugin_config.nvim-dap")
-						end,
-					},
-				},
-			},
-		},
-		config = function()
-			require("core.plugin_config.rust-tools")
-		end,
-	},
-	{
 		"stevearc/oil.nvim",
 		opts = {},
 		-- Optional dependencies
