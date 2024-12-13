@@ -39,3 +39,7 @@ export CLICOLOR=1
 
 # Find Cargo binaries
 export PATH="$HOME/.cargo/bin:$PATH"
+
+if [ -f ~/.zsh_secrets ]; then
+    source ~/.zsh_secrets
+fi

@@ -39,3 +39,5 @@ require("mason-tool-installer").setup({
 	-- Default: nil
 	debounce_hours = 5, -- at least 5 hours between attempts to install/update
 })
+
+require("lspconfig").pyright.setup({})
