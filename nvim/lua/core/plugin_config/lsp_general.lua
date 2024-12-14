@@ -7,9 +7,10 @@ local on_attach = function(_)
 	-- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_reference, {})
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 end
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- DO I NEED THIS?
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "pyright", "rust_analyzer" },
+	ensure_installed = { "lua_ls", "basedpyright", "rust_analyzer" },
 	automatic_installation = false,
 	-- on_attach = on_attach,
 	handlers = {
@@ -18,18 +19,18 @@ require("mason-lspconfig").setup({
 		end,
 	},
 })
--- require("lspconfig").rust_analyzer.setup({
--- 	settings = {
--- 		["rust-analyzer"] = {
--- 			check = {
--- 				command = "clippy",
--- 			},
--- 			diagnostics = {
--- 				enable = true,
--- 			},
--- 		},
--- 	},
--- })
+require("lspconfig").rust_analyzer.setup({
+	settings = {
+		["rust-analyzer"] = {
+			check = {
+				command = "clippy",
+			},
+			diagnostics = {
+				enable = true,
+			},
+		},
+	},
+})
 require("lspconfig").lua_ls.setup({
 	capabilities = capabilities,
 	settings = {
@@ -43,7 +44,8 @@ require("lspconfig").lua_ls.setup({
 		},
 	},
 })
+require("lspconfig").basedpyright.setup({})
 -- require('lspconfig').lua_ls.setup()
-require("lspconfig").pyright.setup({
-	capabilities = capabilities,
-})
+-- require("lspconfig").pyright.setup({
+-- 	capabilities = capabilities,
+-- })

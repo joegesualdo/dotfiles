@@ -29,3 +29,5 @@ vim.keymap.set("n", "H", ":bprevious<CR>")
 vim.keymap.set("n", "L", ":bnext<CR>")
 -- Press space and then h to clear current search highlights
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+
+

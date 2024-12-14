@@ -1,3 +1,4 @@
+TERM=screen-256color
 
 # Zinit >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ## Install/Load Zinit (plugin manager for zsh)

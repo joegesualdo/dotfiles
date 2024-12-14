@@ -28,5 +28,14 @@ config.window_padding = {
 
 config.audible_bell = "Disabled" -- disable the bell sound
 
+
+config.set_environment_variables = {
+	TERM = "tmux-256color",
+}
+config.keys = {
+	-- Ensure Ctrl+A is passed to tmux
+	{ key = "a", mods = "CTRL", action = wezterm.action.SendKey { key = "a", mods = "CTRL" } },
+}
+
 -- and finally, return the configuration to wezterm
 return config
