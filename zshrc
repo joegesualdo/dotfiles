@@ -19,6 +19,7 @@ zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
+zinit light Aloxaf/fzf-tab
 # Zinit <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
 
 # >>> conda initialize >>>
@@ -37,6 +38,15 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export CLICOLOR=1
+
+# autocomplete ----
+# Add custom completions directory to fpath
+fpath=(~/.config/zsh/completions $fpath)
+
+# Initialize Zsh completion system
+autoload -Uz compinit
+compinit
+# ------
 
 # Find Cargo binaries
 export PATH="$HOME/.cargo/bin:$PATH"
